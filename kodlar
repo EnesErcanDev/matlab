@@ -1,0 +1,29 @@
+a = 1;
+b = 2;
+c = 1;
+
+delta = b^2 - 4*a*c;
+
+if delta > 0
+    x1 = (-b + sqrt(delta)) / (2*a);
+    x2 = (-b - sqrt(delta)) / (2*a);
+    disp('Iki gercek kok var:');
+    disp(['x1 = ', num2str(x1)]);
+    disp(['x2 = ', num2str(x2)]);
+
+elseif delta == 0
+    x = -b / (2*a);
+    disp('Cakisik bir kok var:');
+    disp(['x = ', num2str(x)]);
+
+else
+    realPart = -b / (2*a);
+    imagPart = sqrt(-delta) / (2*a);
+    disp('Karmasik kokler var:');
+
+    x1_str = strcat(num2str(realPart), ' + ', num2str(imagPart), 'i');
+    x2_str = strcat(num2str(realPart), ' - ', num2str(imagPart), 'i');
+
+    disp(['x1 = ', x1_str]);
+    disp(['x2 = ', x2_str]);
+end
