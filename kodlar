@@ -1,3 +1,4 @@
+%DİSKRİMİNANT KÖK BULMA 
 a = 1;
 b = 2;
 c = 1;
@@ -46,3 +47,26 @@ end
  imag(1+2i)
  sqrt(-1)
 -----------------------------------------------------------------
+%VERİ TİPLERİ
+number=123 
+123+1
+
+
+pi
+
+sind(90)
+
+a=1+2+3;  % ; kullanımı eğer ki kullanırsan o satırdaki değeri command windowa yazmamasını istiyorsun demektir 
+b=2*a + a/3 
+
+%%
+
+%sin=123  sin olan sin değil bizim belirlediğimiz sini aldığı için data type error veriyor
+sin(pi)
+
+% rand bu da 0 la 1 arası bir random sayı üretir
+%rng(1)  %random number generator demek içine seed girdiğinde oluşturacağımız rastgele sayı bu seed ile entegre olur 
+%rand
+rand*10 %alttaki ile aynı işlev sadece integer değil
+randi(10) % random integer sayı üretir 1-10 arası
+----------------------------------------------------------------
