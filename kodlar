@@ -70,3 +70,46 @@ sin(pi)
 rand*10 %alttaki ile aynı işlev sadece integer değil
 randi(10) % random integer sayı üretir 1-10 arası
 ----------------------------------------------------------------
+ r=[5, 1, 3] % bu ve 1 alt satırdaki ise satır olarak yazar
+ ra=[5 1 3 ]
+ c=[5;7;8] %bu şekil çalıştırdığımızda sütun olarak çalıştırır (;)
+ ca=[5,7,8]' %burda da sütun olması için tek tırnak kullanıyoruz
+ 
+ x=[r,ra]   % 5 1 3 5 1 3 şeklinde bir satır olarak tek bir değer verir çünkü bu değerleri yukarda satır olarak tanımladık
+ % y=[r,c]  % hata verir çünkü dizi boyutları tutarlı değil
+
+ M=[2,4,10;
+    16,3,7]   %2x3 lük bir matris oluşturmuş oluruz
+ A=[1,2;
+    3,4;
+    5,6] %3x2 lik matris
+    B=[1,2,3;
+      4,5,6]
+    size(A) %dizi boyutunu söyler satır x sütun
+    length(A) % dizi boyunu söyler
+    size(B)
+    length(B)
+    
+    zeros(3)   %zeros 0 larla dolu olan bir matris oluşturur eğer ki satır sütun belirtilmez ise yazılan tek değer olan a*a lık bir matris ortaya çıkar
+    ones(3)    %ones da zerosla aynı mantıkta çalışır tek farkı matris 1 lerle doludur
+    zeros(4,2)
+   
+   
+   [6,3]+2 %[8,5]
+   [8,5]-2 &[6,3]
+   [6,3]+[8,5] %[14,8]
+   [8,5]-[6,3] %[2,2]
+   [3,5] .* [4,8] %bu çarpım element by element yani her bir satır ve sütunun karşısında kendisine denk olanıyla işlemi yapar
+   [3,5] ./ [4,8]   % ekstra olarak burada / yada \ işlemi sonuç değiştirir ilk yazılan sol / sağ olurken diğeri sağ/sol işlemini verir
+   [1,2] .^ [5,3]   % üssünü alır yani [1,8] matrisini oluşturur
+   
+   C=[11,5;
+      -9,4]
+   D=[-7,8;
+       6,2]
+   C .* D
+   
+   % max(matris adı) kullanıldığında matris boyutuna göre satır ve sütun olarak cevapları getirir ayrıca imajiner bir kısım belirtirsek bütün matrisi reel ve imajiner gibi düşünüp ekrana sayıların büyüklüklerini getirir yani -1 -13 4 varsa -13 olarak ekrana gelir büyüklük olarak en yüksek o çünkü
+   % sort(matris adı) bu da yukardaki ile aynı mantık satır ve sütunlara göre ayrı ayrı sıralama işlemi yapar örnek olarak:
+   sort(C)  %yukarıdan aşşağıya doğru küçükten büyüğe sıralar
+---------------------------------------------------------------------------------
