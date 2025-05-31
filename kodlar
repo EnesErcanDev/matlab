@@ -162,18 +162,21 @@ c=a.*b
 d=a./b
 e=a.\b
 f=a.^b
+
 a+5
 b-6
 a*3
 3\b %vektör bileşenleri skalere bölünebilirken skaleri vektöre bölmemiz tanımsızdır yani 3/[3 4] hatalı iken [3 4]/3 doğrudur
+
 [6 -4]/2
 2\[4 8]
 
 [2 3].^2 
 2.^[2 3] % ikiside farklı sonuçlar verecektir 
+
 g=[3 4 5;9 -3 7;6 8 -2]
 g(1,:) % satır erişimi
 g(:,3) %sütun erişimi
-h=g*5
+h=g*5 %bütün matrisin skaler bir sayıyla çarpımı yada bölümü
 j=g/5
 ----------------------------------------------------------------------------
