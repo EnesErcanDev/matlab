@@ -125,3 +125,55 @@ b=3;
 c=a^2+b^2;
 disp(c)
 -----------------------------------------------------------------------------
+a=5;
+b=7.5000;
+c=-3;
+d=a*b*c;
+%who
+%whos
+%workspace online compiler olduğu için açılmıyor fakat ekstra bir pencere açar ve değerleri gösterir
+a=1;
+b=3;
+c=a^2+b^2;
+disp(c);
+
+[5,7];
+
+disp([5,7]);
+
+disp(['a','c']); % her ne kadar ayrı olsalarda çalıştırıldığında komut satırı "ac" cevabını verir
+
+disp([4;8]);   % iki sayıyı ayrı satırlara yazar matrislerde de kullanılır
+
+1:6; % 1 den 6 ya kadar 1 er 1 er arttırarak ekrana yazar artış miktarı belirtmediğimiz için default olarak 1
+
+disp(2:5);
+disp(2:3:18);  % 2 den başlar 3 er arttırarak 18 e gider
+
+20:-5:-2;
+
+a=[2 1 -1]
+b=[4 2 -3]
+a+b
+
+a=[4 5]
+b=[3 -2]
+c=a.*b
+d=a./b
+e=a.\b
+f=a.^b
+a+5
+b-6
+a*3
+3\b %vektör bileşenleri skalere bölünebilirken skaleri vektöre bölmemiz tanımsızdır yani 3/[3 4] hatalı iken [3 4]/3 doğrudur
+[6 -4]/2
+2\[4 8]
+
+[2 3].^2 
+2.^[2 3] % ikiside farklı sonuçlar verecektir 
+g=[3 4 5;9 -3 7;6 8 -2]
+g(1,:) % satır erişimi
+g(:,3) %sütun erişimi
+h=g*5
+j=g/5
+----------------------------------------------------------------------------
