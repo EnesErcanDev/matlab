@@ -357,3 +357,68 @@ line([1 2 3 1],[-7 -9 -5 -7]
 z=2.0*x.^2+y
 surf(x,y,z)
 --------------------------------------------------------------------------------------------------------------
+ syms x
+ limit((1-exp(-x))/x)
+ 
+ % seri toplamı
+ syms n
+ symsum(n,1,100)
+ sum(1:1:100) % 1 den 100 e kadar 1 er arttırarak toplamı söyle
+ 
+ syms k n
+ symsum(k,1,n)
+ 
+ syms k
+ symsum((-1)^(k+1)*1/k,1,inf)
+ 
+ %  türev
+ syms x a b c d
+ fx=a+b*x+c*x^2+d*x^3
+ dfx=diff(fx) % b+2*c*x+3*d*x^2 ayrıca diff(fx,türev alınacak mertebe) şeklinde gösterim bulunur yani
+ dfx=diff(fx,2) % bu işlem direkt 2. türevi gösterir
+ 
+ % örnek: y=(4*t-7)/(t^2+3*t-6)
+ syms t
+ y=(4*t-7)/(t^2+3*t-6)
+ ty=diff(y,t)
+ ts=simplify(ty) % daha sade bir çözüm gösterir mühim değil
+ 
+ % örnek: fx=3/2*x^3 +4*x^2+3 fonksiyonunun -3,2 aralığındaki max min değerlerini bul
+ syms y
+ fx=3/2*x^3 + 4*x^2 + 3;
+ fxd=diff(fx,x)  %fonksiyonun türevini al
+ ext=solve(fxd)  %türevin kökünü bul
+ fxdd=diff(fxd,x);
+ maxmin1=subs(fxdd,x,ext(1))
+ maxmin2=subs(fxdd,x,ext(2))
+ 
+ %örnek fx=2*x^3-7*x+3/2 fonksiyonunun (2,3.5) noktasındaki teğetini bul ve grafiğini çizdir
+ sysms f x
+ f=2*x^3-7*x+3/2
+ fd=diff(f,x)
+ ftegim=subs(fd,x,2) 
+ yt=ftegim*x+sabit
+ sabit=3.5-17*2
+ 
+ %kısmi türev
+ syms x y
+ fxy=x*y^2+exp(x*y)*x^2
+ fxydx=diff(fxy,x) % x,n yazarak istediğimiz mertebeye göre de kısmi türev alabiliriz
+ 
+ syms x y z
+ fxyz=x*x*y+exp(-y*x*z)-z*y*y
+ diff(fxyz,x) 
+ % eğer ki x e göre 3. kısmi türevini hesaplamak istersek
+ diff(fxyz,'x',3)
+ % eğer ki önce x e göre sonra y ye göre kısmi türevi hesaplamak istersek
+ diff(diff(fxyz,x),y)
+ 
+ % belirsiz integral hesabı
+ syms a b c d
+ fx=a+b*x+c*x^2+d*x^3
+ il=int(fx)
+ 
+ % belirli integral hesabı
+ syms x
+ f=x+1/x
+ ı=int(f,1,5)
