@@ -180,3 +180,105 @@ g(:,3) %sütun erişimi
 h=g*5 %bütün matrisin skaler bir sayıyla çarpımı yada bölümü
 j=g/5
 ----------------------------------------------------------------------------
+a=[2 7 9;1 -3 6;0 -5 7]
+b=[4 7 8;12 5 -3;7 9 11]
+c=a*b % bildiğimiz matris çarpımı yapar
+c=a.*b %sadece karşılıklı sütunları çarpar
+z=[2 7 9;1 -3 6;0 -5 7]
+d=z' %matrisin tranzpozunu almamızı sağlar 4
+% matlabda case sensitive vardır yani büyük A ve küçük a farklı değişkenler olur
+t=inv(z) % matrisin tersini hesaplama komutu inverse ve aşağıda bu iki matrisi çartptığımızda gelen birim matrisi gelir
+z*t
+x=[1 3 -5]
+y=[2 -1 3];
+z=sum(x.*y) % bu bize iki matrisin karşılıklı elemanlarının çarpımının toplamını verir
+a=[1 3 5;2 4 7;8 9 9]
+b=inv(inv(a))
+c=a*b
+
+
+% SEMBOLİK MATRİS TANIMLAMAK
+% syms a b c
+% A=[a b c ;b c a;a c b]
+% b=inv(A)  online compiler olduğu için çalışmıyor fakat bu matrisin tersini a b c cinsinden hesaplar ve ekrana verir
+
+%SEMBOLİK OLARAK TANIMLANAN BİR MATRİSİN TÜREVİNİ ALMAK
+% syms a x
+% A=[a*cos(a*x) exp(a*x) sin(a*x-2;sin(a*x)*exp(a*x) exp(-a*x) cos(a*x)
+% B=diff(A) bu işlem sembolik olarak tanımlanan a matrisinin her elemanının türevini alır 
+% pretty(B) matriste mümkün olan sadeleştirmeleri yapar ve daha düzgün bir matris gösterir
+
+%SEMBOLİK MATRİSİN SATIR VE SÜTUN TOPLAMLARI
+% syms a b c
+% A=[a b c ;b c a;a c b]
+% w=sum(A(:,1)) % sonuç olarak a+c+b alırız 
+
+% SEMBOOLİK BİR MATRİSTE SEMBOLİK DEĞİŞKENLER YERİNE SAYISAL DEĞERLER ATAMAK
+% syms a b c
+% A=[a*b b*c;a*c 1-a*b]
+% b=subs(A,{a,b,c},{1 2 3})
+% syms x y
+% A=[x*y;x*y^2;x*x*y]
+% b=subs(A,{x,y},{5 3})
+
+% SEMBOLİK DEĞİŞKEN İÇERDEDEN DENKLEMLERİN ÇÖZÜMÜ SOLVE FONKSİYONU
+% d1='0.1*exp(x)+5*sin(x)-5=x'
+% [x]=solve(d1)
+% syms x y
+% [x,y]=solve('5*x-3*y=2','6*x+y=7')
+
+% 3 BİLİNMEYENLİ 3 DENKLEMDEN OLUŞAN SİSTEMİN SOLVE İLE ÇÖZÜMÜ
+% d1='3*x+5*y+2*z=19'
+% d2='x+y+2*z=9'
+% d3='5*x+y+z=10'
+% [x,y,z]=solve(d1,d2,d3)
+
+% MATLAB İLE LİNEER DENKLEM SİSTEMİNİN ÇÖZÜMÜ 
+% örnek: 2x1+x2-x3=6 ~ 5x1-3x2-3x3=5 ~ x1+2x2+x3=3
+% A=[2 1 -1;5 -3 -3;1 2 1] % katsayılar yüklendi
+% b=[6 5 3] %denklem sonuçları yüklendi
+% aters=inv(A) %denklemin tersi alındı
+% x=aters*b' %kökler bulundu 
+
+% RREF FNKSİYONU
+% örnek: 2x1+x2-x3=6 ~ 5x1-3x2-3x3=5 ~ x1+2x2+x3=3
+% A=[2 1 -1;5 -3 -3;1 2 1] % katsayılar yüklendi
+% b=[6 5 3] %denklem sonuçları yüklendi
+% genMat=[A,b'] %genişletilmiş matris oluşturuldu
+% y=rref(genMat) %matris indirgemeyi yapar
+% x=y(;,end) %sonuçta oluşan matrisin son sütunun yani köklerin olduğu kısmın sonuçlarını ekrana verir
+
+% GUASS JORDAN YÖNTEMİ
+% örnek: 2x1+x2-x3=6 ~ 5x1-3x2-3x3=5 ~ x1+2x2+x3=3
+% A=[2 1 -1;5 -3 -3;1 2 1] % katsayılar yüklendi
+% b=[6 5 3] %denklem sonuçları yüklendi
+% I=eye(3)
+% genMat=[A,b',I]
+% y=rref(genMat)
+% x=y(:,4) 
+
+% BİR MATRİSİN DETERMİNANTININ HESAPLANMASI
+% a=[3 5;7 2]
+% b=det(a)
+
+%BİR MATRİSİN ÜST VE ALT ÜÇGENSEL KISIMLARINI ELDE ETMEK
+% a=[4 5 6;2 7 8;1 4 8]
+% u=triu(a) %üst üçgensel kısım
+% l=tril(a) %alt üçgensel kısım
+
+% BİR MATRİSİN KÖŞEGEN ELEMANLARINDAN OLUŞAN BİR MATRİS ELDE ETMEK
+% a=[3 7 -1;4 6 9;1 -2 8]
+% k=diag(a) %3 6 8 i gösterir
+
+% VERİLEN BİR KARE MATRİSİN BOYUTLARINDAN BİRİM MATRİS ÜRETMEK
+% a=[4 5 6;2 7 8;1 4 8]
+% birim=eye(size(a))
+ 
+% ELEMANLARI SIFIRLARDAN OLUŞAN BİR MATRİS ÜRETMEK
+% s=zeros(3,4) % 3 satır 4 sütun olan 0 matrisi
+% ELEMANLARI BİRLERDEN OLUŞAN BİR MATRİS ÜRETMEK
+% h=ones(3,4) % yukardakinin 1 li hali
+
+% ELEMANLARI RASTGELE SAYILARDAN OLUŞAN MATRİSLER ÜRETMEK
+% m=rand(2,5)
+-----------------------------------------------------------------------------------------------------------
