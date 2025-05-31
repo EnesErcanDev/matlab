@@ -113,3 +113,15 @@ randi(10) % random integer sayı üretir 1-10 arası
    % sort(matris adı) bu da yukardaki ile aynı mantık satır ve sütunlara göre ayrı ayrı sıralama işlemi yapar örnek olarak:
    sort(C)  %yukarıdan aşşağıya doğru küçükten büyüğe sıralar
 ---------------------------------------------------------------------------------
+a=5;
+b=7.5000;
+c=-3;
+d=a*b*c
+%who
+%whos
+%workspace online compiler olduğu için açılmıyor fakat ekstra bir pencere açar ve değerleri gösterir
+a=1;
+b=3;
+c=a^2+b^2;
+disp(c)
+-----------------------------------------------------------------------------
