@@ -422,3 +422,88 @@ surf(x,y,z)
  syms x
  f=x+1/x
  ı=int(f,1,5)
+--------------------------------------------------------------------------------------------------------------------
+%  p(x) = 2*x^5 - 4*x^4 – x^2   +6*x - 7 POLİNOMU İÇİN
+p=[2 -4 0 -1 6 -7]; % bu fonksiyonun x=1 için değeri polyval ile hesaplanır yani
+polyval(p,1)
+
+% X ARGÜMANININ MATRİS OLMASI HALİ
+x=[ 2 3;1 5]
+p=[1 -2 0]
+polyval(p,x) 
+
+% POLYVALM fonksiyonu
+polyvalm(p,x)
+% Bu durumda hesaplanan şey  X matrisinin karesi yani X matrisinin kendisi ile çarpımından , 2*X   matrisinin çıkartılması ile elde edilen matristir.
+
+% ROOTS FONKSİYONU 
+%x^5-2*x^3+3*x+2=0
+ p=[1 0  -2  0  3  2]
+ k=roots(p)
+ 
+ % POLY FONKSİYONU: verilen bir A kare matrisinin karakteristik denklemini yada polinomunu bulur
+ %karakteristik denklemin kökleri A kare matrisinin öz değerleridir
+ 
+ A=[1 -2 5;3 2 -4;1 5 8]
+ k=poly(A)
+ r=roots(k)
+ 
+ % POLİNOMLARIN ÇARPIMI CONV FONKSİYONU
+ % p=x^3-3*x+2 ve q=3*x^4+2*x^2+6*x-7 
+ p=[1 0 -3 2]
+ q=[3 0 2 6 -7]
+ r=conv(p,q)
+ 
+ % POLİNOMLARIN BÖLÜMÜ DECONV FONKSİYONU
+ a=deconv(r,q) %sonucu p ye eşittir çünkü p q çarpımını q ya böldük sonuç tekrar p geldi
+ 
+ % POLİNOMLARIN TÜREVİNİN HESAPLATILMASI POLYDER FONKSİYONU
+ % px polinomu p=2*x^4-3*x^3+4*x^2+x+6
+ p=[2 -3 4 1 6]
+ pu=polyder(p)
+ 
+ % İKİ POLİNOMUN ÇARPIMININ TÜREVİ
+ 
+ p=[3 2 -4 1]
+ q=[-1 5 6]
+ pu=polyder(p,q)
+% rpu=polyder(conv(p,q)) DERSTE EKSTRA BELİRTİLMEDİ BEN EKLEDİM FAKAT BÖYLE BİR ŞEYDE MÜMKÜN İMİŞ
+
+% İKİ POLİNOMUN BÖLÜMÜNÜN TÜREVİ
+ p=[3 2 -4 1]
+ q=[-1 5 6]
+ [pay,payda]=polyder(p,q)
+  
+ %POLİNOMLAR İLE ÇEŞİTLİ SEMBOLİK İŞLEMLER
+ syms x a b c
+ t2=a*x^2;
+ t1=b*x;
+ p=t2+t1+c
+ disp(p);
+ 
+ %collect fonksiyonu eklemeyi düşünmüyorum ama iki tane a a1 b b1 c c1 olan polinom toplandığında dağınık gözükürken collect ile a ve a1 ve diğer çarpanları aynı olan değerleri paranteze alır pretty fonksiyonu gibi
+ 
+ %subs,factor ve solve fonksiyonu
+ syms a b c x
+ t2=a*x^2;
+ t1=b*x;
+ p=t2+t1+c
+ p1=subs(p,{a,b,c},{1,-5,6});
+ disp('p1=');
+ disp(p1);
+ kokler=solve(p1);
+ k1=kokler(1)
+ k2=Kokler(2)
+ disp ('kok1=')
+ disp(k1)
+ disp('kok2')
+ disp(k2)
+ carpan_p=factor(p1)
+ % kodun genel mantığı ax2+bx+c denkeleminde semboller yerine belirtilen 1 -5 6 yı koyar
+ % ardından bunun köklerini bulur yani 0 a eşitler 
+ % kökleri bulduktan sonra ise çarpanlara ayrılmış halini ekrana getirir
+ 
+ % EXPAND fonksiyonu ise bizim çarpılmasını/bölünmesini istediğimiz değerlieri çözüp ekrana verir
+ 
+ 
+ 
