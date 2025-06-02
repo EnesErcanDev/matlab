@@ -1,0 +1,509 @@
+%DİSKRİMİNANT KÖK BULMA 
+a = 1;
+b = 2;
+c = 1;
+
+delta = b^2 - 4*a*c;
+
+if delta > 0
+    x1 = (-b + sqrt(delta)) / (2*a);
+    x2 = (-b - sqrt(delta)) / (2*a);
+    disp('Iki gercek kok var:');
+    disp(['x1 = ', num2str(x1)]);
+    disp(['x2 = ', num2str(x2)]);
+
+elseif delta == 0
+    x = -b / (2*a);
+    disp('Cakisik bir kok var:');
+    disp(['x = ', num2str(x)]);
+
+else
+    realPart = -b / (2*a);
+    imagPart = sqrt(-delta) / (2*a);
+    disp('Karmasik kokler var:');
+
+    x1_str = strcat(num2str(realPart), ' + ', num2str(imagPart), 'i');
+    x2_str = strcat(num2str(realPart), ' - ', num2str(imagPart), 'i');
+
+    disp(['x1 = ', x1_str]);
+    disp(['x2 = ', x2_str]);
+end
+----------------------------------------------------------------
+ 5^2
+ (5+2)*2^2+3
+ ((4+2*2)/2)^2
+ 6*(10/13)+18/(5*7)+(9^2)*5
+ 3*(35^(1/4))+14^0.35
+ 
+ sqrt(16)
+ exp(5)
+ 
+ cos(1)
+ cosd(90)
+ %sin()
+ %sind()
+ 
+ real(1+2i)
+ imag(1+2i)
+ sqrt(-1)
+-----------------------------------------------------------------
+%VERİ TİPLERİ
+number=123 
+123+1
+
+
+pi
+
+sind(90)
+
+a=1+2+3;  % ; kullanımı eğer ki kullanırsan o satırdaki değeri command windowa yazmamasını istiyorsun demektir 
+b=2*a + a/3 
+
+%%
+
+%sin=123  sin olan sin değil bizim belirlediğimiz sini aldığı için data type error veriyor
+sin(pi)
+
+% rand bu da 0 la 1 arası bir random sayı üretir
+%rng(1)  %random number generator demek içine seed girdiğinde oluşturacağımız rastgele sayı bu seed ile entegre olur 
+%rand
+rand*10 %alttaki ile aynı işlev sadece integer değil
+randi(10) % random integer sayı üretir 1-10 arası
+----------------------------------------------------------------
+ r=[5, 1, 3] % bu ve 1 alt satırdaki ise satır olarak yazar
+ ra=[5 1 3 ]
+ c=[5;7;8] %bu şekil çalıştırdığımızda sütun olarak çalıştırır (;)
+ ca=[5,7,8]' %burda da sütun olması için tek tırnak kullanıyoruz
+ 
+ x=[r,ra]   % 5 1 3 5 1 3 şeklinde bir satır olarak tek bir değer verir çünkü bu değerleri yukarda satır olarak tanımladık
+ % y=[r,c]  % hata verir çünkü dizi boyutları tutarlı değil
+
+ M=[2,4,10;
+    16,3,7]   %2x3 lük bir matris oluşturmuş oluruz
+ A=[1,2;
+    3,4;
+    5,6] %3x2 lik matris
+    B=[1,2,3;
+      4,5,6]
+    size(A) %dizi boyutunu söyler satır x sütun
+    length(A) % dizi boyunu söyler
+    size(B)
+    length(B)
+    
+    zeros(3)   %zeros 0 larla dolu olan bir matris oluşturur eğer ki satır sütun belirtilmez ise yazılan tek değer olan a*a lık bir matris ortaya çıkar
+    ones(3)    %ones da zerosla aynı mantıkta çalışır tek farkı matris 1 lerle doludur
+    zeros(4,2)
+   
+   
+   [6,3]+2 %[8,5]
+   [8,5]-2 &[6,3]
+   [6,3]+[8,5] %[14,8]
+   [8,5]-[6,3] %[2,2]
+   [3,5] .* [4,8] %bu çarpım element by element yani her bir satır ve sütunun karşısında kendisine denk olanıyla işlemi yapar
+   [3,5] ./ [4,8]   % ekstra olarak burada / yada \ işlemi sonuç değiştirir ilk yazılan sol / sağ olurken diğeri sağ/sol işlemini verir
+   [1,2] .^ [5,3]   % üssünü alır yani [1,8] matrisini oluşturur
+   
+   C=[11,5;
+      -9,4]
+   D=[-7,8;
+       6,2]
+   C .* D
+   
+   % max(matris adı) kullanıldığında matris boyutuna göre satır ve sütun olarak cevapları getirir ayrıca imajiner bir kısım belirtirsek bütün matrisi reel ve imajiner gibi düşünüp ekrana sayıların büyüklüklerini getirir yani -1 -13 4 varsa -13 olarak ekrana gelir büyüklük olarak en yüksek o çünkü
+   % sort(matris adı) bu da yukardaki ile aynı mantık satır ve sütunlara göre ayrı ayrı sıralama işlemi yapar örnek olarak:
+   sort(C)  %yukarıdan aşşağıya doğru küçükten büyüğe sıralar
+---------------------------------------------------------------------------------
+a=5;
+b=7.5000;
+c=-3;
+d=a*b*c
+%who
+%whos
+%workspace online compiler olduğu için açılmıyor fakat ekstra bir pencere açar ve değerleri gösterir
+a=1;
+b=3;
+c=a^2+b^2;
+disp(c)
+-----------------------------------------------------------------------------
+a=5;
+b=7.5000;
+c=-3;
+d=a*b*c;
+%who
+%whos
+%workspace online compiler olduğu için açılmıyor fakat ekstra bir pencere açar ve değerleri gösterir
+a=1;
+b=3;
+c=a^2+b^2;
+disp(c);
+
+[5,7];
+
+disp([5,7]);
+
+disp(['a','c']); % her ne kadar ayrı olsalarda çalıştırıldığında komut satırı "ac" cevabını verir
+
+disp([4;8]);   % iki sayıyı ayrı satırlara yazar matrislerde de kullanılır
+
+1:6; % 1 den 6 ya kadar 1 er 1 er arttırarak ekrana yazar artış miktarı belirtmediğimiz için default olarak 1
+
+disp(2:5);
+disp(2:3:18);  % 2 den başlar 3 er arttırarak 18 e gider
+
+20:-5:-2;
+
+a=[2 1 -1]
+b=[4 2 -3]
+a+b
+
+a=[4 5]
+b=[3 -2]
+c=a.*b
+d=a./b
+e=a.\b
+f=a.^b
+
+a+5
+b-6
+a*3
+3\b %vektör bileşenleri skalere bölünebilirken skaleri vektöre bölmemiz tanımsızdır yani 3/[3 4] hatalı iken [3 4]/3 doğrudur
+
+[6 -4]/2
+2\[4 8]
+
+[2 3].^2 
+2.^[2 3] % ikiside farklı sonuçlar verecektir 
+
+g=[3 4 5;9 -3 7;6 8 -2]
+g(1,:) % satır erişimi
+g(:,3) %sütun erişimi
+h=g*5 %bütün matrisin skaler bir sayıyla çarpımı yada bölümü
+j=g/5
+----------------------------------------------------------------------------
+a=[2 7 9;1 -3 6;0 -5 7]
+b=[4 7 8;12 5 -3;7 9 11]
+c=a*b % bildiğimiz matris çarpımı yapar
+c=a.*b %sadece karşılıklı sütunları çarpar
+z=[2 7 9;1 -3 6;0 -5 7]
+d=z' %matrisin tranzpozunu almamızı sağlar 4
+% matlabda case sensitive vardır yani büyük A ve küçük a farklı değişkenler olur
+t=inv(z) % matrisin tersini hesaplama komutu inverse ve aşağıda bu iki matrisi çartptığımızda gelen birim matrisi gelir
+z*t
+x=[1 3 -5]
+y=[2 -1 3];
+z=sum(x.*y) % bu bize iki matrisin karşılıklı elemanlarının çarpımının toplamını verir
+a=[1 3 5;2 4 7;8 9 9]
+b=inv(inv(a))
+c=a*b
+
+
+% SEMBOLİK MATRİS TANIMLAMAK
+% syms a b c
+% A=[a b c ;b c a;a c b]
+% b=inv(A)  online compiler olduğu için çalışmıyor fakat bu matrisin tersini a b c cinsinden hesaplar ve ekrana verir
+
+%SEMBOLİK OLARAK TANIMLANAN BİR MATRİSİN TÜREVİNİ ALMAK
+% syms a x
+% A=[a*cos(a*x) exp(a*x) sin(a*x-2;sin(a*x)*exp(a*x) exp(-a*x) cos(a*x)
+% B=diff(A) bu işlem sembolik olarak tanımlanan a matrisinin her elemanının türevini alır 
+% pretty(B) matriste mümkün olan sadeleştirmeleri yapar ve daha düzgün bir matris gösterir
+
+%SEMBOLİK MATRİSİN SATIR VE SÜTUN TOPLAMLARI
+% syms a b c
+% A=[a b c ;b c a;a c b]
+% w=sum(A(:,1)) % sonuç olarak a+c+b alırız 
+
+% SEMBOOLİK BİR MATRİSTE SEMBOLİK DEĞİŞKENLER YERİNE SAYISAL DEĞERLER ATAMAK
+% syms a b c
+% A=[a*b b*c;a*c 1-a*b]
+% b=subs(A,{a,b,c},{1 2 3})
+% syms x y
+% A=[x*y;x*y^2;x*x*y]
+% b=subs(A,{x,y},{5 3})
+
+% SEMBOLİK DEĞİŞKEN İÇERDEDEN DENKLEMLERİN ÇÖZÜMÜ SOLVE FONKSİYONU
+% d1='0.1*exp(x)+5*sin(x)-5=x'
+% [x]=solve(d1)
+% syms x y
+% [x,y]=solve('5*x-3*y=2','6*x+y=7')
+
+% 3 BİLİNMEYENLİ 3 DENKLEMDEN OLUŞAN SİSTEMİN SOLVE İLE ÇÖZÜMÜ
+% d1='3*x+5*y+2*z=19'
+% d2='x+y+2*z=9'
+% d3='5*x+y+z=10'
+% [x,y,z]=solve(d1,d2,d3)
+
+% MATLAB İLE LİNEER DENKLEM SİSTEMİNİN ÇÖZÜMÜ 
+% örnek: 2x1+x2-x3=6 ~ 5x1-3x2-3x3=5 ~ x1+2x2+x3=3
+% A=[2 1 -1;5 -3 -3;1 2 1] % katsayılar yüklendi
+% b=[6 5 3] %denklem sonuçları yüklendi
+% aters=inv(A) %denklemin tersi alındı
+% x=aters*b' %kökler bulundu 
+
+% RREF FNKSİYONU
+% örnek: 2x1+x2-x3=6 ~ 5x1-3x2-3x3=5 ~ x1+2x2+x3=3
+% A=[2 1 -1;5 -3 -3;1 2 1] % katsayılar yüklendi
+% b=[6 5 3] %denklem sonuçları yüklendi
+% genMat=[A,b'] %genişletilmiş matris oluşturuldu
+% y=rref(genMat) %matris indirgemeyi yapar
+% x=y(;,end) %sonuçta oluşan matrisin son sütunun yani köklerin olduğu kısmın sonuçlarını ekrana verir
+
+% GUASS JORDAN YÖNTEMİ
+% örnek: 2x1+x2-x3=6 ~ 5x1-3x2-3x3=5 ~ x1+2x2+x3=3
+% A=[2 1 -1;5 -3 -3;1 2 1] % katsayılar yüklendi
+% b=[6 5 3] %denklem sonuçları yüklendi
+% I=eye(3)
+% genMat=[A,b',I]
+% y=rref(genMat)
+% x=y(:,4) 
+
+% BİR MATRİSİN DETERMİNANTININ HESAPLANMASI
+% a=[3 5;7 2]
+% b=det(a)
+
+%BİR MATRİSİN ÜST VE ALT ÜÇGENSEL KISIMLARINI ELDE ETMEK
+% a=[4 5 6;2 7 8;1 4 8]
+% u=triu(a) %üst üçgensel kısım
+% l=tril(a) %alt üçgensel kısım
+
+% BİR MATRİSİN KÖŞEGEN ELEMANLARINDAN OLUŞAN BİR MATRİS ELDE ETMEK
+% a=[3 7 -1;4 6 9;1 -2 8]
+% k=diag(a) %3 6 8 i gösterir
+
+% VERİLEN BİR KARE MATRİSİN BOYUTLARINDAN BİRİM MATRİS ÜRETMEK
+% a=[4 5 6;2 7 8;1 4 8]
+% birim=eye(size(a))
+ 
+% ELEMANLARI SIFIRLARDAN OLUŞAN BİR MATRİS ÜRETMEK
+% s=zeros(3,4) % 3 satır 4 sütun olan 0 matrisi
+% ELEMANLARI BİRLERDEN OLUŞAN BİR MATRİS ÜRETMEK
+% h=ones(3,4) % yukardakinin 1 li hali
+
+% ELEMANLARI RASTGELE SAYILARDAN OLUŞAN MATRİSLER ÜRETMEK
+% m=rand(2,5)
+-----------------------------------------------------------------------------------------------------------
+axis([-2 2 -4 4])  % x noktaları -2 den 2 ye y noktaları -4 den 4 e olan bir koordinat düzlemi verir
+% İKİ NOKTA ARASINA DOĞRU ÇİZDİRİLMESİ
+% A(x1,y1) ve B(x2,y2) X=[x1,x2] Y=[y1,y2] şeklinde belirlenmiş 2 vektörse
+line([-2,1],[2,4])
+% y=3x+5 ve y=-x+3 doğrularını x=(-4,4) aralığında çiziniz
+x1=-4
+y1=3*x1+5
+x2=4
+y2=3*x2+5
+line([x1,x2],[y1,y2])
+x1=-4
+y1=-x1+3
+x2=4
+y2=-x2+3
+line([x1,x2],[y1,y2])
+line([-4,4],[0,0])
+line([0,0],[-10,20])
+
+% ÖRNEK GRAFİK ÇİZİMİ
+% y=x^2 parabolünün x=(-10,10) y=(-100,100) aralığındaki grafiğinin çizimi
+fplot('x*x',[-10 10 -100 100]=
+grid
+line([-10,10],[0,0])
+line([0,0],[-100,100])
+
+% y=3x+5 ve y=-x+3 doğrularını x=(-4,4) aralığında çiziniz
+fplot('[3*x+5,-1*x+3]',[-4 4 -10 20])
+line([0,0],[-10,20])
+line([-4,4],[0,0])
+
+% x kare , eksi x kare ,x küp ,eksi x küp grafiğini çizme
+fplot('[x^2,-x^2,x^3,-x^3]',[-10 10 -100 100])
+grid
+line([-10,10],[0,0])
+line([0,0],[-100,100])
+xlabel('x')
+ylabel('y')
+title('PARABOL VE KÜBİKLER')
+legend('x^2','-x^2,'x^3','-x^3') %düzlem üstündeki grafikleri ayırt etmemizi sağlar
+
+% verilen eşleşmiş değerleri koordinat düzleminde grafiğini çizen kod
+x=[1 3 5 6 8]
+y=[1 8 26 34 67]
+plot(x,y)
+% (cos -sin;sin -cos) --ezbere bil-- b=2,3 c=4,7 noktaları arasına çizilecek doğru parçasını saat yönü tersine 90 derece çevirecek grafik
+axis([-10 10 , -10  10]) 
+line([0  0],[-10 10]) 
+line([-10 10],[0  0]) 
+line([2 4],[3 7]) 
+A=[0  -1;1 0] 
+BUS=A*[2 3]' 
+CUS=A*[4 7]'
+line([-3 -7],[2 4])
+
+% ÖRNEK BİR ÜÇGENİN X EKSENİNE GÖRE SİMETRİĞİNİN ALINMASI KÖŞE NOKTALARI B=1,7 C=2,9 D=3,5
+x=[1 2 3 1]
+y=[7 9 5 7]
+line(x,y)
+axis([-10 10 -10 10])
+line([-10 10] ,[0 0]
+line([0  0],[-10 10]
+A=[1 0;0 -1]
+v1=[1 7]
+v2=[2 9]
+c3=[3 5]
+A*v1'
+A*v2'
+A*v3'
+line([1 2 3 1],[-7 -9 -5 -7]
+
+% ÖRNEK X=-2,2 VE Y=-2,2 DEĞER ARALIKLARI VE 0.2 ARTIM DEĞERİNİ KULLANARAK Z=2*X^2+Y YÜZEYİNİ ÇİZ
+[x,y]=meshgrid(-2:0.2:2,-2:0.2:2)
+z=2.0*x.^2+y
+surf(x,y,z)
+--------------------------------------------------------------------------------------------------------------
+ syms x
+ limit((1-exp(-x))/x)
+ 
+ % seri toplamı
+ syms n
+ symsum(n,1,100)
+ sum(1:1:100) % 1 den 100 e kadar 1 er arttırarak toplamı söyle
+ 
+ syms k n
+ symsum(k,1,n)
+ 
+ syms k
+ symsum((-1)^(k+1)*1/k,1,inf)
+ 
+ %  türev
+ syms x a b c d
+ fx=a+b*x+c*x^2+d*x^3
+ dfx=diff(fx) % b+2*c*x+3*d*x^2 ayrıca diff(fx,türev alınacak mertebe) şeklinde gösterim bulunur yani
+ dfx=diff(fx,2) % bu işlem direkt 2. türevi gösterir
+ 
+ % örnek: y=(4*t-7)/(t^2+3*t-6)
+ syms t
+ y=(4*t-7)/(t^2+3*t-6)
+ ty=diff(y,t)
+ ts=simplify(ty) % daha sade bir çözüm gösterir mühim değil
+ 
+ % örnek: fx=3/2*x^3 +4*x^2+3 fonksiyonunun -3,2 aralığındaki max min değerlerini bul
+ syms y
+ fx=3/2*x^3 + 4*x^2 + 3;
+ fxd=diff(fx,x)  %fonksiyonun türevini al
+ ext=solve(fxd)  %türevin kökünü bul
+ fxdd=diff(fxd,x);
+ maxmin1=subs(fxdd,x,ext(1))
+ maxmin2=subs(fxdd,x,ext(2))
+ 
+ %örnek fx=2*x^3-7*x+3/2 fonksiyonunun (2,3.5) noktasındaki teğetini bul ve grafiğini çizdir
+ sysms f x
+ f=2*x^3-7*x+3/2
+ fd=diff(f,x)
+ ftegim=subs(fd,x,2) 
+ yt=ftegim*x+sabit
+ sabit=3.5-17*2
+ 
+ %kısmi türev
+ syms x y
+ fxy=x*y^2+exp(x*y)*x^2
+ fxydx=diff(fxy,x) % x,n yazarak istediğimiz mertebeye göre de kısmi türev alabiliriz
+ 
+ syms x y z
+ fxyz=x*x*y+exp(-y*x*z)-z*y*y
+ diff(fxyz,x) 
+ % eğer ki x e göre 3. kısmi türevini hesaplamak istersek
+ diff(fxyz,'x',3)
+ % eğer ki önce x e göre sonra y ye göre kısmi türevi hesaplamak istersek
+ diff(diff(fxyz,x),y)
+ 
+ % belirsiz integral hesabı
+ syms a b c d
+ fx=a+b*x+c*x^2+d*x^3
+ il=int(fx)
+ 
+ % belirli integral hesabı
+ syms x
+ f=x+1/x
+ ı=int(f,1,5)
+--------------------------------------------------------------------------------------------------------------------
+%  p(x) = 2*x^5 - 4*x^4 – x^2   +6*x - 7 POLİNOMU İÇİN
+p=[2 -4 0 -1 6 -7]; % bu fonksiyonun x=1 için değeri polyval ile hesaplanır yani
+polyval(p,1)
+
+% X ARGÜMANININ MATRİS OLMASI HALİ
+x=[ 2 3;1 5]
+p=[1 -2 0]
+polyval(p,x) 
+
+% POLYVALM fonksiyonu
+polyvalm(p,x)
+% Bu durumda hesaplanan şey  X matrisinin karesi yani X matrisinin kendisi ile çarpımından , 2*X   matrisinin çıkartılması ile elde edilen matristir.
+
+% ROOTS FONKSİYONU 
+%x^5-2*x^3+3*x+2=0
+ p=[1 0  -2  0  3  2]
+ k=roots(p)
+ 
+ % POLY FONKSİYONU: verilen bir A kare matrisinin karakteristik denklemini yada polinomunu bulur
+ %karakteristik denklemin kökleri A kare matrisinin öz değerleridir
+ 
+ A=[1 -2 5;3 2 -4;1 5 8]
+ k=poly(A)
+ r=roots(k)
+ 
+ % POLİNOMLARIN ÇARPIMI CONV FONKSİYONU
+ % p=x^3-3*x+2 ve q=3*x^4+2*x^2+6*x-7 
+ p=[1 0 -3 2]
+ q=[3 0 2 6 -7]
+ r=conv(p,q)
+ 
+ % POLİNOMLARIN BÖLÜMÜ DECONV FONKSİYONU
+ a=deconv(r,q) %sonucu p ye eşittir çünkü p q çarpımını q ya böldük sonuç tekrar p geldi
+ 
+ % POLİNOMLARIN TÜREVİNİN HESAPLATILMASI POLYDER FONKSİYONU
+ % px polinomu p=2*x^4-3*x^3+4*x^2+x+6
+ p=[2 -3 4 1 6]
+ pu=polyder(p)
+ 
+ % İKİ POLİNOMUN ÇARPIMININ TÜREVİ
+ 
+ p=[3 2 -4 1]
+ q=[-1 5 6]
+ pu=polyder(p,q)
+% rpu=polyder(conv(p,q)) DERSTE EKSTRA BELİRTİLMEDİ BEN EKLEDİM FAKAT BÖYLE BİR ŞEYDE MÜMKÜN İMİŞ
+
+% İKİ POLİNOMUN BÖLÜMÜNÜN TÜREVİ
+ p=[3 2 -4 1]
+ q=[-1 5 6]
+ [pay,payda]=polyder(p,q)
+  
+ %POLİNOMLAR İLE ÇEŞİTLİ SEMBOLİK İŞLEMLER
+ syms x a b c
+ t2=a*x^2;
+ t1=b*x;
+ p=t2+t1+c
+ disp(p);
+ 
+ %collect fonksiyonu eklemeyi düşünmüyorum ama iki tane a a1 b b1 c c1 olan polinom toplandığında dağınık gözükürken collect ile a ve a1 ve diğer çarpanları aynı olan değerleri paranteze alır pretty fonksiyonu gibi
+ 
+ %subs,factor ve solve fonksiyonu
+ syms a b c x
+ t2=a*x^2;
+ t1=b*x;
+ p=t2+t1+c
+ p1=subs(p,{a,b,c},{1,-5,6});
+ disp('p1=');
+ disp(p1);
+ kokler=solve(p1);
+ k1=kokler(1)
+ k2=Kokler(2)
+ disp ('kok1=')
+ disp(k1)
+ disp('kok2')
+ disp(k2)
+ carpan_p=factor(p1)
+ % kodun genel mantığı ax2+bx+c denkeleminde semboller yerine belirtilen 1 -5 6 yı koyar
+ % ardından bunun köklerini bulur yani 0 a eşitler 
+ % kökleri bulduktan sonra ise çarpanlara ayrılmış halini ekrana getirir
+ 
+ % EXPAND fonksiyonu ise bizim çarpılmasını/bölünmesini istediğimiz değerlieri çözüp ekrana verir
+ 
+ 
+ 
