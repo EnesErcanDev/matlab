@@ -211,7 +211,7 @@ c=a*b
 %SEMBOLİK MATRİSİN SATIR VE SÜTUN TOPLAMLARI
 % syms a b c
 % A=[a b c ;b c a;a c b]
-% w=sum(A(:,1)) % sonuç olarak a+c+b alırız 
+% w=sum(A(:,1)) % sonuç olarak a+2b alırız 
 
 % SEMBOOLİK BİR MATRİSTE SEMBOLİK DEĞİŞKENLER YERİNE SAYISAL DEĞERLER ATAMAK
 % syms a b c
