@@ -86,7 +86,7 @@ randi(10) % random integer sayı üretir 1-10 arası
     B=[1,2,3;
       4,5,6]
     size(A) %dizi boyutunu söyler satır x sütun
-    length(A) % dizi boyunu söyler
+    length(A) % dizi boyunu söyler YANİ UZUN OLAN KISMI 7X8 LİK MATRİS VARSA EKRANA SADECE 8 GELECEKTİR BU MATRİSTE İSE 3
     size(B)
     length(B)
     
