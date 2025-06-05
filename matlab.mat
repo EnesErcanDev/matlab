@@ -108,7 +108,8 @@ randi(10) % random integer sayı üretir 1-10 arası
    D=[-7,8;
        6,2]
    C .* D
-   
+   % max komutu her bir sütundaki en büyük sayıyı getirir yani max(C) çıktısı 11 5 gelir eğer ki 4 yerine 40 olsa 11 40 gelirdi
+   % sort(C) bu komut ise tüm matrisi sütunlarına göre yukardan aşşağı küçükten büyüğe gidecek şekilde sıralar yani -9 4;11 5 ekrana gelir
    % max(matris adı) kullanıldığında matris boyutuna göre satır ve sütun olarak cevapları getirir ayrıca imajiner bir kısım belirtirsek bütün matrisi reel ve imajiner gibi düşünüp ekrana sayıların büyüklüklerini getirir yani -1 -13 4 varsa -13 olarak ekrana gelir büyüklük olarak en yüksek o çünkü
    % sort(matris adı) bu da yukardaki ile aynı mantık satır ve sütunlara göre ayrı ayrı sıralama işlemi yapar örnek olarak:
    sort(C)  %yukarıdan aşşağıya doğru küçükten büyüğe sıralar
