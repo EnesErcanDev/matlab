@@ -163,6 +163,7 @@ c=a.*b
 d=a./b
 e=a.\b
 f=a.^b
+sum(a+b) % bu işlem ise tüm matrisin toplamını verir 4 +5 +3 +(-2)=10 aynı şekilde sum(a-b) de 4+5-(3 -2)= 9-1 =8
 % BURDA İŞLEM YAPARKEN . KOYMADAN YAPTIĞIMIZ HER İŞLEM SONUCU MATRİS ÇARPIMI(ÇARPIM SADECE İ J * J İ ŞEKLİNDEKİ MATRİSLERDE YAPILABİLİR) BÖLÜMÜ ŞEKLİNDE VERİR
 a=[4 5]
 b=[3 ;-2]
