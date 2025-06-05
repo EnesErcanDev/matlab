@@ -316,9 +316,11 @@ line([x1,x2],[y1,y2])
 line([-4,4],[0,0])
 line([0,0],[-10,20])
 
+% EĞER Kİ NOKTALAR FONKSİYON DEĞİLSE YANİ X^2 X^3 MİSALİ DEĞİLSE LİNE  ---  EĞER Kİ FONKSİYON İSE FPLOT EN DÜZGÜN KULLANIMI VERİR
+
 % ÖRNEK GRAFİK ÇİZİMİ
 % y=x^2 parabolünün x=(-10,10) y=(-100,100) aralığındaki grafiğinin çizimi
-fplot('x*x',[-10 10 -100 100]=
+fplot('x*x',[-10 10 -100 100]
 grid
 line([-10,10],[0,0])
 line([0,0],[-100,100])
@@ -350,7 +352,7 @@ line([2 4],[3 7])
 A=[0  -1;1 0] 
 BUS=A*[2 3]' 
 CUS=A*[4 7]'
-line([-3 -7],[2 4])
+line([-3 -7],[2 4])  % EĞER Kİ TAM OLARAK NASIL CEVAP OLDUĞUNU KAVRAYAMIYORSAK SIRASIYLA [BUS(1) CUS(1)],[BUS(2) CUS(2)] DE YAZABİLİRİZ
 
 % ÖRNEK BİR ÜÇGENİN X EKSENİNE GÖRE SİMETRİĞİNİN ALINMASI KÖŞE NOKTALARI B=1,7 C=2,9 D=3,5
 x=[1 2 3 1]
@@ -366,7 +368,7 @@ c3=[3 5]
 A*v1'
 A*v2'
 A*v3'
-line([1 2 3 1],[-7 -9 -5 -7]
+line([1 2 3 1],[-7 -9 -5 -7] % ASLINDA ÇARPIM İŞLEMLERİNE GEREK YOK ÖZELLİKLE BELİRTİLMEDYİSE TABİ X E SİMETRİDE Y LER İŞARET DEĞİŞİYOR Y YE SİMETRİ DEDİĞİNDE İSE X LER BÖYLELİKLE KOLAYCA ÇİZİLEBİLİR
 
 % ÖRNEK X=-2,2 VE Y=-2,2 DEĞER ARALIKLARI VE 0.2 ARTIM DEĞERİNİ KULLANARAK Z=2*X^2+Y YÜZEYİNİ ÇİZ
 [x,y]=meshgrid(-2:0.2:2,-2:0.2:2)
@@ -374,12 +376,12 @@ z=2.0*x.^2+y
 surf(x,y,z)
 --------------------------------------------------------------------------------------------------------------
  syms x
- limit((1-exp(-x))/x)
+ limit((1-exp(-x))/x) % EĞER Kİ LİMİTİN KAÇA YAKLAŞACAĞINI YAZMAZ İSEK OTOMATİK 0 A GİDER
  
  % seri toplamı
  syms n
  symsum(n,1,100)
- sum(1:1:100) % 1 den 100 e kadar 1 er arttırarak toplamı söyle
+ sum(1:1:100) % üstteki ile aynı cevabı verir hatta sum(1:100) yazmak bile yeterli 
  
  syms k n
  symsum(k,1,n)
@@ -400,7 +402,7 @@ surf(x,y,z)
  ts=simplify(ty) % daha sade bir çözüm gösterir mühim değil
  
  % örnek: fx=3/2*x^3 +4*x^2+3 fonksiyonunun -3,2 aralığındaki max min değerlerini bul
- syms y
+ syms x
  fx=3/2*x^3 + 4*x^2 + 3;
  fxd=diff(fx,x)  %fonksiyonun türevini al
  ext=solve(fxd)  %türevin kökünü bul
@@ -409,11 +411,11 @@ surf(x,y,z)
  maxmin2=subs(fxdd,x,ext(2))
  
  %örnek fx=2*x^3-7*x+3/2 fonksiyonunun (2,3.5) noktasındaki teğetini bul ve grafiğini çizdir
- sysms f x
+ sysms x
  f=2*x^3-7*x+3/2
  fd=diff(f,x)
  ftegim=subs(fd,x,2) 
- yt=ftegim*x+sabit
+ yt=ftegim*x+sabit  % BURDA KAFA KARIŞIKLIĞI OLARAK YT VAR YT=3.5 YANİ Y
  sabit=3.5-17*2
  
  %kısmi türev
@@ -441,12 +443,12 @@ surf(x,y,z)
 --------------------------------------------------------------------------------------------------------------------
 %  p(x) = 2*x^5 - 4*x^4 – x^2   +6*x - 7 POLİNOMU İÇİN
 p=[2 -4 0 -1 6 -7]; % bu fonksiyonun x=1 için değeri polyval ile hesaplanır yani
-polyval(p,1)
+polyval(p,1) % EK NOT P Yİ TANIMLAMA ŞEKLİMİZ SIRASIYLA ÜSLERİN KATSAYILARIDIR HERHANGİ BİR ÜS YOKSA KATSAYI 0 DIR
 
 % X ARGÜMANININ MATRİS OLMASI HALİ
 x=[ 2 3;1 5]
 p=[1 -2 0]
-polyval(p,x) 
+polyval(p,x) % x^2-2*x+0 fonksiyonunda sırasıyla 2 3 1 5 koyarak tüm cevapları aynı matris içerisinde elemanların sırasına göre yazar
 
 % POLYVALM fonksiyonu
 polyvalm(p,x)
@@ -455,13 +457,13 @@ polyvalm(p,x)
 % ROOTS FONKSİYONU 
 %x^5-2*x^3+3*x+2=0
  p=[1 0  -2  0  3  2]
- k=roots(p)
+ k=roots(p) % BU DA KATSAYILARI İLE BELİRTİLEN POLİNOMUN KÖKLERİNİ BULAN DENKLEMDİR 5 TANE KÖKÜ EKRANA VERİR
  
  % POLY FONKSİYONU: verilen bir A kare matrisinin karakteristik denklemini yada polinomunu bulur
  %karakteristik denklemin kökleri A kare matrisinin öz değerleridir
  
  A=[1 -2 5;3 2 -4;1 5 8]
- k=poly(A)
+ k=poly(A)     % KARAKTERİSTİK DERKEN LAMBDA İLE YAZILAN FORMÜL
  r=roots(k)
  
  % POLİNOMLARIN ÇARPIMI CONV FONKSİYONU
@@ -475,14 +477,14 @@ polyvalm(p,x)
  
  % POLİNOMLARIN TÜREVİNİN HESAPLATILMASI POLYDER FONKSİYONU
  % px polinomu p=2*x^4-3*x^3+4*x^2+x+6
- p=[2 -3 4 1 6]
+ p=[2 -3 4 1 6]   %İSTERSEK SYMS X DİYİP BUNU YAZIP TÜREV ALABİLİRİZ TEK FARKI BU 
  pu=polyder(p)
  
  % İKİ POLİNOMUN ÇARPIMININ TÜREVİ
  
  p=[3 2 -4 1]
  q=[-1 5 6]
- pu=polyder(p,q)
+ pu=polyder(p,q)   %polinom türevi fonksiyonudur anlamadığım şekilde polyder(p,q) da çarpmak istediğimizi nasıl anlıyor fikrim yok
 % rpu=polyder(conv(p,q)) DERSTE EKSTRA BELİRTİLMEDİ BEN EKLEDİM FAKAT BÖYLE BİR ŞEYDE MÜMKÜN İMİŞ
 
 % İKİ POLİNOMUN BÖLÜMÜNÜN TÜREVİ
@@ -509,12 +511,12 @@ polyvalm(p,x)
  disp(p1);
  kokler=solve(p1);
  k1=kokler(1)
- k2=Kokler(2)
+ k2=kokler(2)
  disp ('kok1=')
  disp(k1)
  disp('kok2')
  disp(k2)
- carpan_p=factor(p1)
+ carpan_p=factor(p1) %factor fonksiyonu burda kökleri bulunan denklemi çarpanlarına ayrırır yani bir nevi bize kökleri daha görünür hale getirir fakat solve yine de çözer pek mühim değil sadece güzel görsel görüntü
  % kodun genel mantığı ax2+bx+c denkeleminde semboller yerine belirtilen 1 -5 6 yı koyar
  % ardından bunun köklerini bulur yani 0 a eşitler 
  % kökleri bulduktan sonra ise çarpanlara ayrılmış halini ekrana getirir
