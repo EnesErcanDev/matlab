@@ -96,7 +96,7 @@ randi(10) % random integer sayı üretir 1-10 arası
    
    
    [6,3]+2 %[8,5]
-   [8,5]-2 &[6,3]
+   [8,5]-2 &[6,3]     % TOPLAMA ÇARPMADA İŞARETİN SAĞ YADA SOL TARAFTA OLMASI ÖNEMLİ OLMASADA BÖLMEDE ÖNEMLİDİR ÇÜNKÜ SKALER BİR SAYI DİZİYE BÖLÜNMEZ FAKAT DİZİ SKALERE BÖLÜNEBİLİR
    [6,3]+[8,5] %[14,8]
    [8,5]-[6,3] %[2,2]
    [3,5] .* [4,8] %bu çarpım element by element yani her bir satır ve sütunun karşısında kendisine denk olanıyla işlemi yapar
