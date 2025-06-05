@@ -163,7 +163,11 @@ c=a.*b
 d=a./b
 e=a.\b
 f=a.^b
-
+% BURDA İŞLEM YAPARKEN . KOYMADAN YAPTIĞIMIZ HER İŞLEM SONUCU MATRİS ÇARPIMI(ÇARPIM SADECE İ J * J İ ŞEKLİNDEKİ MATRİSLERDE YAPILABİLİR) BÖLÜMÜ ŞEKLİNDE VERİR
+a=[4 5]
+b=[3 ;-2]
+a*b
+% yukarda sonuç 2 gelecektir çünkü yandaki matris yazıldığında 4.3 +(5.-2)=2 
 a+5
 b-6
 a*3
